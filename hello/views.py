@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.template import loader
 from django.http import HttpResponse
 
 
 def hello(request):
-    return HttpResponse("Hello word")
+    template = loader.get_template('test.html')
+    return HttpResponse(template.render())
